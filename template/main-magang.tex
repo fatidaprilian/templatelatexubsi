@@ -1,0 +1,83 @@
+\documentclass[12pt, a4paper, onecolumn, oneside, final]{report}
+
+\input{identitas}
+\input{pengaturan/preambles}
+
+\begin{document}
+
+% Aktifkan watermark logo UBSI (10cm x 10cm, Middle Center, Behind Text)
+\AktifkanWatermark
+
+% Bagian Awal
+\include{bagian-awal/cover-magang}
+
+\pagenumbering{roman}
+\pagestyle{plain} % Frontmatter nomor halaman di tengah bawah
+
+\begin{spacing}{1.5}
+\include{bagian-awal/pengesahan}
+\end{spacing}
+
+\begin{spacing}{1}
+\include{bagian-awal/abstrak}
+\end{spacing}
+
+\begin{spacing}{2}
+	\clearpage
+	\addcontentsline{toc}{chapter}{DAFTAR ISI}
+	\tableofcontents
+	
+	\clearpage
+	\addcontentsline{toc}{chapter}{DAFTAR GAMBAR}
+	\listoffigures
+	
+	\clearpage
+	\addcontentsline{toc}{chapter}{DAFTAR TABEL}
+	\listoftables
+	\clearpage
+\end{spacing}
+
+% Bagian Utama
+\clearpage
+\pagenumbering{arabic}
+\pagestyle{main} % Mainmatter menggunakan fancyhdr
+\doublespacing
+
+% =======================================================
+% PILIH SALAH SATU OUTLINE DENGAN MENGHAPUS TANDA %
+% Khusus S1 Teknologi Informasi
+% =======================================================
+
+% --- 1. Proyek Inovasi Perangkat Lunak ---
+% \include{outlines/ti-proyek-inovasi/bab1}
+% \include{outlines/ti-proyek-inovasi/bab2}
+% \include{outlines/ti-proyek-inovasi/bab3}
+% \include{outlines/ti-proyek-inovasi/bab4}
+% \include{outlines/ti-proyek-inovasi/bab5}
+% \include{outlines/ti-proyek-inovasi/bab6}
+
+% --- 2. Analisa Program Berbasis Mobile ---
+% \include{outlines/ti-mobile/bab1}
+% \include{outlines/ti-mobile/bab2}
+% \include{outlines/ti-mobile/bab3}
+% \include{outlines/ti-mobile/bab4}
+
+% --- 3. Jaringan Komputer ---
+% \include{outlines/ti-jaringan/bab1}
+% \include{outlines/ti-jaringan/bab2}
+% \include{outlines/ti-jaringan/bab3}
+% \include{outlines/ti-jaringan/bab4}
+
+% --- 4. Analisis Sistem ---
+\include{outlines/ti-analisis-sistem/bab1}
+\include{outlines/ti-analisis-sistem/bab2}
+\include{outlines/ti-analisis-sistem/bab3}
+\include{outlines/ti-analisis-sistem/bab4}
+% =======================================================
+
+% Daftar Pustaka
+\clearpage
+\addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
+\bibliography{pustaka}
+
+\end{document}

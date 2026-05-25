@@ -1,0 +1,28 @@
+{
+  "project": "TemplateLatexBSI",
+  "conceptualAnchor": {
+    "anchorReference": "Buku Pedoman Akademik UBSI",
+    "description": "Standard Indonesian Academic Paper typography"
+  },
+  "researchDossier": {
+    "metadata": {
+      "researchVerifiedAt": "2026-05-25",
+      "antiRepeatLedger": []
+    }
+  },
+  "libraryResearchStatus": "completed",
+  "libraryDecisions": [],
+  "derivedTokenLogic": {
+    "margins": {
+      "left": "4cm",
+      "top": "3cm",
+      "right": "3cm",
+      "bottom": "3cm"
+    },
+    "typography": {
+      "fontFamily": "Times New Roman",
+      "fontSize": "12pt",
+      "lineSpacing": "1.5"
+    }
+  }
+}
