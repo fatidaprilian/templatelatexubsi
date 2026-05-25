@@ -1,6 +1,6 @@
 {
   "name": "create-skripsi-ubsi",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Scaffolding Template LaTeX Tugas Akhir / Skripsi Universitas Bina Sarana Informatika (UBSI)",
   "main": "bin/cli.js",
   "bin": {
@@ -10,7 +10,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["ubsi", "bsi", "latex", "skripsi", "magang", "template"],
+  "keywords": [
+    "ubsi",
+    "bsi",
+    "latex",
+    "skripsi",
+    "magang",
+    "template"
+  ],
   "author": "Farid Aprilian (ryuenn3123)",
   "repository": {
     "type": "git",
