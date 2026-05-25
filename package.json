@@ -1,6 +1,6 @@
 {
   "name": "create-skripsi-ubsi",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Scaffolding Template LaTeX Tugas Akhir / Skripsi Universitas Bina Sarana Informatika (UBSI)",
   "main": "bin/cli.js",
   "bin": {

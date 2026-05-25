@@ -44,11 +44,14 @@ Anda bisa meng-inisialisasi template ini tanpa perlu mengunduh file `.zip`. Cuku
    ```
 3. CLI akan menanyakan nama folder *project* Anda (contoh: `skripsi-saya`).
 4. Pilih tipe laporan yang ingin dikerjakan:
-   - `[1]` Laporan PKL / Magang
-   - `[2]` Skripsi Perancangan Program Science
-   - `[3]` Skripsi Penelitian Ilmiah
-   - `[4]` Skripsi Jaringan Komputer
-   - `[5]` Skripsi Aplikasi StartUp
+   - `[1]` PKL - Proyek Inovasi Perangkat Lunak
+   - `[2]` PKL - Analisa Program Berbasis Mobile
+   - `[3]` PKL - Jaringan Komputer
+   - `[4]` PKL - Analisis Sistem
+   - `[5]` Skripsi - Perancangan Program Science
+   - `[6]` Skripsi - Penelitian Ilmiah
+   - `[7]` Skripsi - Jaringan Komputer
+   - `[8]` Skripsi - Aplikasi StartUp
 5. Selesai! Masuk ke dalam folder *project* tersebut:
    ```bash
    cd skripsi-saya

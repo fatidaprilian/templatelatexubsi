@@ -1,4 +1,4 @@
-﻿#!/usr/bin/env node
+#!/usr/bin/env node
 
 const fs = require('fs');
 const path = require('path');
@@ -23,13 +23,16 @@ rl.question("Nama folder project Anda? (misal: skripsi-saya): ", (projectName) =
   }
 
   console.log("\nPilih tipe Laporan:");
-  console.log("1. PKL / Magang (Proyek Inovasi / Analisis Sistem)");
-  console.log("2. Skripsi - Perancangan Program Science");
-  console.log("3. Skripsi - Penelitian Ilmiah");
-  console.log("4. Skripsi - Jaringan Komputer");
-  console.log("5. Skripsi - Aplikasi StartUp");
+  console.log("1. PKL - Proyek Inovasi Perangkat Lunak");
+  console.log("2. PKL - Analisa Program Berbasis Mobile");
+  console.log("3. PKL - Jaringan Komputer");
+  console.log("4. PKL - Analisis Sistem");
+  console.log("5. Skripsi - Perancangan Program Science");
+  console.log("6. Skripsi - Penelitian Ilmiah");
+  console.log("7. Skripsi - Jaringan Komputer");
+  console.log("8. Skripsi - Aplikasi StartUp");
   
-  rl.question("\nMasukkan angka pilihan Anda (1-5): ", (choice) => {
+  rl.question("\nMasukkan angka pilihan Anda (1-8): ", (choice) => {
     console.log(`\nMenginisiasi project di folder ${projectName}...`);
     
     // Copy the whole template folder
@@ -62,46 +65,43 @@ function setupOutline(targetDir, choice) {
   const mainFile = path.join(targetDir, 'main.tex');
   const outlinesDir = path.join(targetDir, 'outlines');
   
-  let targetOutlineDir = "";
-  
-  if (choice === '1') {
-    // Magang
+  const isMagang = parseInt(choice) <= 4;
+  let activeOutline = "";
+
+  if (isMagang) {
     fs.renameSync(mainMagang, mainFile);
     fs.unlinkSync(mainSkripsi);
-    
-    // Un-comment outline magang in main.tex (Assume Analisis Sistem is default, or they can change it later)
-    let content = fs.readFileSync(mainFile, 'utf8');
-    fs.writeFileSync(mainFile, content); // Kept as is, they can uncomment in tex
-    
-    // Cleanup outlines
-    keepOnly(outlinesDir, ['ti-analisis-sistem', 'ti-jaringan', 'ti-mobile', 'ti-proyek-inovasi']);
+    if (choice === '1') activeOutline = "ti-proyek-inovasi";
+    else if (choice === '2') activeOutline = "ti-mobile";
+    else if (choice === '3') activeOutline = "ti-jaringan";
+    else if (choice === '4') activeOutline = "ti-analisis-sistem";
+    else activeOutline = "ti-analisis-sistem";
   } else {
-    // Skripsi
     fs.renameSync(mainSkripsi, mainFile);
     fs.unlinkSync(mainMagang);
-    
-    let content = fs.readFileSync(mainFile, 'utf8');
-    
-    // Switch case to uncomment the correct section
-    let activeOutline = "";
-    if (choice === '2') activeOutline = "skripsi-ti-program-science";
-    else if (choice === '3') activeOutline = "skripsi-ti-penelitian-ilmiah";
-    else if (choice === '4') activeOutline = "skripsi-ti-jaringan";
-    else if (choice === '5') activeOutline = "skripsi-ti-startup";
-    else activeOutline = "skripsi-ti-jaringan"; // default
-    
-    // We replace the comment block for the selected outline
-    const regex = new RegExp(`% \\\\include{outlines/${activeOutline}`, 'g');
-    content = content.replace(regex, `\\include{outlines/${activeOutline}`);
-    
-    // Also comment out the previous default (jaringan) if it's not the choice
-    if (choice !== '4') {
-       content = content.replace(/\\include{outlines\/skripsi-ti-jaringan/g, `% \\include{outlines/skripsi-ti-jaringan`);
-    }
-    
-    fs.writeFileSync(mainFile, content);
-    keepOnly(outlinesDir, [activeOutline]);
+    if (choice === '5') activeOutline = "skripsi-ti-program-science";
+    else if (choice === '6') activeOutline = "skripsi-ti-penelitian-ilmiah";
+    else if (choice === '7') activeOutline = "skripsi-ti-jaringan";
+    else if (choice === '8') activeOutline = "skripsi-ti-startup";
+    else activeOutline = "skripsi-ti-jaringan";
   }
+
+  let content = fs.readFileSync(mainFile, 'utf8');
+  
+  // Activate the selected outline
+  const regex = new RegExp(`% \\\\include{outlines/${activeOutline}`, 'g');
+  content = content.replace(regex, `\\include{outlines/${activeOutline}`);
+  
+  // Deactivate defaults if they are not the selected one
+  if (isMagang && choice !== '4') {
+     content = content.replace(/\\include{outlines\/ti-analisis-sistem/g, `% \\include{outlines/ti-analisis-sistem`);
+  }
+  if (!isMagang && choice !== '7') {
+     content = content.replace(/\\include{outlines\/skripsi-ti-jaringan/g, `% \\include{outlines/skripsi-ti-jaringan`);
+  }
+  
+  fs.writeFileSync(mainFile, content);
+  keepOnly(outlinesDir, [activeOutline]);
 }
 
 function keepOnly(dir, foldersToKeep) {
