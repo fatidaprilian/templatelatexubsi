@@ -27,10 +27,10 @@ rl.question("Nama folder project Anda? (misal: skripsi-saya): ", (projectName) =
   console.log("2. PKL - Analisa Program Berbasis Mobile");
   console.log("3. PKL - Jaringan Komputer");
   console.log("4. PKL - Analisis Sistem");
-  console.log("5. Skripsi - Perancangan Program Science");
-  console.log("6. Skripsi - Penelitian Ilmiah");
-  console.log("7. Skripsi - Jaringan Komputer");
-  console.log("8. Skripsi - Aplikasi StartUp");
+  console.log("5. Skripsi - Perancangan Program Science     [Kode: 156 | Individu]");
+  console.log("6. Skripsi - Penelitian Ilmiah               [Kode: 138 | Individu]");
+  console.log("7. Skripsi - Jaringan Komputer               [Kode: 137 | Individu]");
+  console.log("8. Skripsi - Aplikasi StartUp                [Kode: 158 | Kelompok maks. 2]");
   
   rl.question("\nMasukkan angka pilihan Anda (1-8): ", (choice) => {
     console.log(`\nMenginisiasi project di folder ${projectName}...`);

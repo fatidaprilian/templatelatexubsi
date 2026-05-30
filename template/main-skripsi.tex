@@ -40,6 +40,10 @@
 	\clearpage
 	\addcontentsline{toc}{chapter}{DAFTAR TABEL}
 	\listoftables
+	
+	\include{bagian-awal/daftar-simbol}
+	\include{bagian-awal/daftar-lampiran}
+	
 	\clearpage
 \end{spacing}
 
@@ -84,5 +88,18 @@
 \clearpage
 \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
 \bibliography{pustaka}
+
+%% =====================================================
+%% BACKMATTER
+%% Sesuaikan dengan outline yang dipilih:
+%% - Outline 156: comment-out \include{bagian-akhir/lembar-bimbingan}
+%% - Outline 137: surat-keterangan-riset WAJIB (jangan di-comment)
+%% - Outline lain: surat-keterangan-riset optional
+%% =====================================================
+\include{bagian-akhir/daftar-riwayat-hidup}
+\include{bagian-akhir/lembar-bimbingan}
+\include{bagian-akhir/surat-keterangan-riset}
+\include{bagian-akhir/bukti-plagiarisme}
+\include{bagian-akhir/lampiran}
 
 \end{document}

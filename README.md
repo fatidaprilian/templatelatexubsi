@@ -59,6 +59,27 @@ Anda bisa meng-inisialisasi template ini tanpa perlu mengunduh file `.zip`. Cuku
 
 ---
 
+## Ketentuan Per Outline
+
+Setiap outline Tugas Akhir (Skripsi) memiliki ketentuan khusus yang harus dipenuhi oleh mahasiswa:
+
+| Kode | Nama Outline | Metode | Luaran Wajib | Catatan Khusus |
+| :--- | :--- | :--- | :--- | :--- |
+| **156** | Perancangan Program Science | Individu | Publikasi Artikel Ilmiah, BAST Karya | Surat riset optional (tergantung kasus) |
+| **138** | Penelitian Ilmiah | Individu | Publikasi Artikel Ilmiah, BAST Karya | Wajib melakukan riset |
+| **137** | Jaringan Komputer | Individu | Publikasi Artikel Ilmiah, BAST Karya | Surat keterangan riset **WAJIB ASLI** dengan stempel basah, skema jaringan dari simulator |
+| **158** | Aplikasi StartUp | Kelompok (maks. 2) | Publikasi Artikel Ilmiah, BAST Karya | Aplikasi wajib terbit di Google Play Store, membuat & mempresentasikan Pitchdeck |
+
+### Luaran Wajib Semua Outline
+- **Publikasi Artikel Ilmiah**
+- **Berita Acara Serah Terima Karya (BAST Karya)**
+
+### Catatan Penting
+- **Outline 158 (Aplikasi StartUp)**: Maksimal dikerjakan oleh 2 orang dalam kelompok (bukan individu). Aplikasi yang dibangun wajib terdaftar dan dipublikasikan di Google Play Store. Mahasiswa juga wajib menyusun dan mempresentasikan Pitchdeck (gambaran umum rencana bisnis startup) saat sidang. Bab III (Tinjauan StartUp) wajib mendetailkan 9 komponen Business Model Canvas (BMC) secara utuh.
+- **Outline 137 (Jaringan Komputer)**: Surat Keterangan Riset wajib asli (memiliki kop surat resmi, ditandatangani, dan dibubuhi stempel basah perusahaan). Skema jaringan berjalan dan jaringan usulan wajib menggunakan simulator jaringan (Packet Tracer, GNS3, atau sejenisnya) dan dilarang digambar secara manual. Mahasiswa wajib mempresentasikan simulasi pengujian awal dan akhir secara live di hadapan dewan penguji.
+
+---
+
 ## Cara Kompilasi (Melihat Hasil PDF)
 
 Di dalam repositori Anda yang baru saja digenerate, sudah tersedia file *auto-compiler*. Pastikan Anda sudah menginstal **TeX Live / MiKTeX** di laptop Anda.
