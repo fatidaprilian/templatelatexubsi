@@ -15,11 +15,8 @@
 \pagestyle{plain} % Frontmatter nomor halaman di tengah bawah
 
 \begin{spacing}{1.5}
-\include{bagian-awal/pengesahan}
-\end{spacing}
-
-\begin{spacing}{1}
-\include{bagian-awal/abstrak}
+\include{bagian-awal/pengesahan-pkl}
+\include{bagian-awal/kata-pengantar}
 \end{spacing}
 
 \begin{spacing}{2}
@@ -34,6 +31,15 @@
 	\clearpage
 	\addcontentsline{toc}{chapter}{DAFTAR TABEL}
 	\listoftables
+	
+	\clearpage
+	\addcontentsline{toc}{chapter}{DAFTAR SIMBOL}
+	\include{bagian-awal/daftar-simbol}
+	
+	\clearpage
+	\addcontentsline{toc}{chapter}{DAFTAR LAMPIRAN}
+	\include{bagian-awal/daftar-lampiran}
+	
 	\clearpage
 \end{spacing}
 
@@ -79,5 +85,19 @@
 \clearpage
 \addcontentsline{toc}{chapter}{DAFTAR PUSTAKA}
 \bibliography{pustaka}
+
+%% =====================================================
+%% BACKMATTER PKL
+%% Sesuaikan komentar berdasarkan outline yang dipilih:
+%%
+%% ti-mobile: comment-out lembar-kuesioner
+%% ti-analisis-sistem: surat-keterangan-pkl dan lembar-nilai-pkl
+%%   hanya wajib jika PKL di perusahaan berbadan hukum
+%% =====================================================
+\include{bagian-akhir-pkl/daftar-riwayat-hidup-pkl}
+\include{bagian-akhir-pkl/surat-keterangan-pkl}
+\include{bagian-akhir-pkl/lembar-nilai-pkl}
+\include{bagian-akhir-pkl/lembar-kuesioner}   % comment-out untuk ti-mobile
+\include{bagian-akhir-pkl/lampiran-pkl}
 
 \end{document}
